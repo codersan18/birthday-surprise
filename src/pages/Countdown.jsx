@@ -7,9 +7,9 @@ export default function Countdown() {
       <div className="card">
 
       <h1 className="title">
-            <span>💙</span>
+            <span>🩵</span>
             <span>A Little Surprise For You</span>
-            <span>💙</span>
+            <span>🩵</span>
             </h1>
 
         <p className="subtitle">
