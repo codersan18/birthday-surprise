@@ -251,21 +251,6 @@ function Memories() {
 
                 </div>
 
-
-                {/* =========================
-                    Last Memory → Letter
-                ========================= */}
-
-                {isLastMemory && (
-
-                    <div className="last-memory-section">
-
-                        <div className="last-memory-line"></div>
-                    </div>
-
-                )}
-
-
             </div>
 
         </div>

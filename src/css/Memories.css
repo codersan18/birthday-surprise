@@ -165,15 +165,13 @@
 ========================= */
 
 .memory-photo-container {
-
     width: min(500px, 65vw);
+    aspect-ratio: 16 / 9;
 
-    height: 52vh;
+    height: auto;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     padding: 8px;
@@ -193,19 +191,13 @@
     overflow: hidden;
 }
 
-
 .memory-photo {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
+    object-position: center;
     border-radius: 15px;
-
     display: block;
-
     animation: photoAppear 0.5s ease;
 }
 
@@ -506,7 +498,6 @@
     }
 }
 
-
 /* =========================
    TABLET
 ========================= */
@@ -514,83 +505,65 @@
 @media (max-width: 768px) {
 
     .memories-page {
-
         padding: 12px;
     }
 
-
     .memories-container {
-
         width: 96vw;
-
         height: 96vh;
-
         padding: 20px 15px;
-
         border-radius: 25px;
     }
 
-
     .memories-header {
-
         gap: 10px;
     }
 
-
     .memories-header > span {
-
         font-size: 20px;
     }
 
-
     .memories-header p {
-
         font-size: 0.65rem;
     }
 
-
     .memories-header h1 {
-
         font-size: 1.8rem;
     }
 
-
     .memory-photo-wrapper {
-
         gap: 8px;
     }
 
-
     .memory-photo-container {
-
         width: 72vw;
-
-        height: 52vh;
-
-        max-height: 470px;
+        aspect-ratio: 16 / 9;
+        height: auto;
+        max-height: none;
+        padding: 6px;
+        border-radius: 18px;
     }
 
+    .memory-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 12px;
+    }
 
     .arrow {
-
         width: 40px;
-
         height: 40px;
-
         font-size: 30px;
     }
 
-
     .memory-info h2 {
-
         font-size: 1.15rem;
     }
 
-
     .memory-info p {
-
         font-size: 0.75rem;
-
         max-width: 90%;
     }
 }
@@ -603,103 +576,73 @@
 @media (max-width: 480px) {
 
     .memories-page {
-
         padding: 8px;
     }
 
-
     .memories-container {
-
         width: 96vw;
-
         height: 96vh;
-
         padding: 18px 12px;
-
         border-radius: 22px;
     }
 
-
     .memories-header > span {
-
         font-size: 16px;
     }
 
-
     .memories-header p {
-
         font-size: 0.58rem;
     }
 
-
     .memories-header h1 {
-
         font-size: 1.45rem;
     }
 
-
     .memory-photo-wrapper {
-
         gap: 5px;
     }
 
-
     .memory-photo-container {
-
-        width: 76vw;
-
-        height: 50vh;
-
-        max-height: 420px;
-
+        width: calc(100% - 75px);
+        aspect-ratio: 16 / 9;
+        height: auto;
+        max-height: none;
         padding: 5px;
+        border-radius: 17px;
     }
 
-
     .memory-photo {
-
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
         border-radius: 12px;
     }
 
-
     .arrow {
-
         width: 34px;
-
         height: 34px;
-
         font-size: 25px;
     }
 
-
     .memory-number {
-
         font-size: 0.7rem;
     }
 
-
     .memory-info h2 {
-
         font-size: 1rem;
     }
 
-
     .memory-info p {
-
         font-size: 0.68rem;
-
         line-height: 1.4;
     }
 
-
     .memory-footer {
-
         font-size: 0.6rem;
     }
 
-
     .memory-heart {
-
         display: none;
     }
 }
@@ -712,35 +655,37 @@
 @media (max-width: 360px) {
 
     .memories-container {
-
         padding: 14px 10px;
     }
 
-
     .memories-header h1 {
-
         font-size: 1.25rem;
     }
 
-
     .memory-photo-container {
-
-        height: 47vh;
+        width: calc(100% - 65px);
+        aspect-ratio: 16 / 9;
+        height: auto;
+        max-height: none;
+        padding: 4px;
+        border-radius: 15px;
     }
 
+    .memory-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+    }
 
     .arrow {
-
         width: 30px;
-
         height: 30px;
-
         font-size: 22px;
     }
 
-
     .memory-info p {
-
         font-size: 0.62rem;
     }
 }
