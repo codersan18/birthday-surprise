@@ -1,628 +1,115 @@
-/* =========================
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #4f8bff40 0%,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #ff7eb620 0%,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #081229,
+            #102a56,
+            #1e4fb8
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
    MAIN PAGE
-========================= */
+========================================================= */
 
 .memories-page {
 
+    min-height: 100vh;
     width: 100%;
-    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px 20px;
 
     position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 25px;
-
-    overflow: hidden;
-
-    color: white;
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(90, 169, 255, 0.25),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(255, 100, 160, 0.18),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #061126,
-            #102b58,
-            #243f83
-        );
-
-    font-family: 'Poppins', sans-serif;
-}
-
-
-/* =========================
-   CONTAINER
-========================= */
-
-.memories-container {
-
-    width: min(850px, 94vw);
-
-    height: 94vh;
-
-    padding: 25px 40px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    text-align: center;
-
-    border-radius: 30px;
-
-    background: rgba(255, 255, 255, 0.09);
-
-    border: 1px solid rgba(255, 255, 255, 0.16);
-
-    backdrop-filter: blur(20px);
-
-    -webkit-backdrop-filter: blur(20px);
-
-    box-shadow:
-        0 25px 80px rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-
-    position: relative;
-
-    z-index: 2;
-}
-
-.last-memory-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 25px;
-
-    animation: lastMemoryAppear 1.5s ease forwards;
-}
-
-.last-memory-line {
-    width: 80px;
-    height: 1px;
-
-    margin-bottom: 12px;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 170, 205, 0.8),
-        transparent
-    );
-}
-
-.last-memory-text {
-    margin: 0 0 15px;
-
-    color: #dbe7fa;
-
-    font-size: 0.85rem;
-
-    font-weight: 300;
-
-    letter-spacing: 0.5px;
-
-    opacity: 0;
-
-    animation: textReveal 1s ease 0.7s forwards;
-}
-
-.letter-button {
-    border: none;
-
-    padding: 13px 25px;
-
-    border-radius: 14px;
-
-    color: white;
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: 0.85rem;
-
-    font-weight: 500;
-
-    cursor: pointer;
-
-    background: linear-gradient(
-        135deg,
-        #5aa9ff,
-        #7775ff
-    );
-
-    box-shadow:
-        0 8px 25px rgba(90, 130, 255, 0.3);
-
-    opacity: 0;
-
-    animation:
-        buttonReveal 1s ease 1.2s forwards,
-        buttonFloat 3s ease-in-out 2.2s infinite;
-
-    transition: 0.3s;
-}
-
-.letter-button:hover {
-    transform: translateY(-4px) scale(1.03);
-
-    box-shadow:
-        0 15px 35px rgba(90, 130, 255, 0.45);
-}
-
-
-@keyframes lastMemoryAppear {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-@keyframes textReveal {
-
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-@keyframes buttonReveal {
-
-    from {
-        opacity: 0;
-        transform: translateY(15px) scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-
-@keyframes buttonFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-.memories-header {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 18px;
-
-    width: 100%;
-}
-
-.memories-header > span {
-
-    font-size: 28px;
-
-    animation: heartPulse 2s infinite;
-}
-
-.memories-header p {
-
-    margin: 0 0 3px;
-
-    color: #b9ccef;
-
-    font-size: 0.8rem;
-
-    font-weight: 300;
-}
-
-.memories-header h1 {
-
-    margin: 0;
-
-    font-size: 2.2rem;
-
-    font-weight: 700;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #a9d5ff,
-            #ffffff
-        );
-
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-}
-
-
-/* =========================
-   PHOTO AREA
-========================= */
-
-.memory-photo-wrapper {
-
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 20px;
-}
-
-
-/* =========================
-   PHOTO CONTAINER
-========================= */
-
-.memory-photo-container {
-
-    width: min(500px, 65vw);
-
-    height: 52vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 8px;
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.25),
-            rgba(255,255,255,0.05)
-        );
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.35);
 
     overflow: hidden;
 }
 
 
-.memory-photo {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: contain;
-
-    border-radius: 15px;
-
-    display: block;
-
-    animation: photoAppear 0.5s ease;
-}
-
-
-/* =========================
-   ARROWS
-========================= */
-
-.arrow {
-
-    width: 50px;
-
-    height: 50px;
-
-    flex-shrink: 0;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,0.12);
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    color: white;
-
-    font-size: 38px;
-
-    line-height: 1;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    backdrop-filter: blur(10px);
-}
-
-.arrow:hover {
-
-    background: rgba(255,255,255,0.22);
-
-    transform: scale(1.08);
-
-    box-shadow:
-        0 10px 30px rgba(90,169,255,0.25);
-}
-
-
-/* =========================
-   MEMORY INFO
-========================= */
-
-.memory-info {
-
-    width: 100%;
-
-    max-width: 650px;
-}
-
-
-.memory-number {
-
-    color: #8fc5ff;
-
-    font-size: 0.85rem;
-
-    font-weight: 500;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 5px;
-}
-
-.memory-number span {
-
-    color: #7387ae;
-
-}
-
-
-.memory-info h2 {
-
-    margin: 0;
-
-    color: #ff9fc4;
-
-    font-size: 1.4rem;
-
-    font-weight: 500;
-}
-
-
-.memory-info p {
-
-    margin: 7px auto 0;
-
-    max-width: 580px;
-
-    color: #d6e2f8;
-
-    font-size: 0.85rem;
-
-    font-weight: 300;
-
-    line-height: 1.5;
-}
-
-
-/* =========================
-   DOTS
-========================= */
-
-.memory-dots {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-}
-
-
-.dot {
-
-    width: 8px;
-
-    height: 8px;
-
-    padding: 0;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,0.25);
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-
-.dot.active {
-
-    width: 25px;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #5aa9ff,
-            #ff8fb8
-        );
-}
-
-
-.dot:hover {
-
-    background: rgba(255,255,255,0.6);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.memory-footer {
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    color: #9eb3d8;
-
-    font-size: 0.7rem;
-
-    font-weight: 300;
-}
-
-
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* =========================================================
+   BACKGROUND HEARTS
+========================================================= */
 
 .memory-heart {
 
-    position: absolute;
+    position: fixed;
 
-    color: rgba(255, 126, 182, 0.35);
+    color: rgba(255, 130, 190, 0.35);
 
-    font-size: 22px;
+    font-size: 24px;
 
     pointer-events: none;
 
-    animation: floatingHeart 6s ease-in-out infinite;
+    animation: floatingHeart 4s ease-in-out infinite;
 }
 
 .heart-one {
-
+    top: 12%;
     left: 8%;
-
-    top: 18%;
 }
 
 .heart-two {
-
-    left: 15%;
-
-    bottom: 15%;
-
-    animation-delay: 2s;
-}
-
-.heart-three {
-
+    top: 25%;
     right: 8%;
-
-    top: 20%;
 
     animation-delay: 1s;
 }
 
-.heart-four {
+.heart-three {
+    bottom: 20%;
+    left: 15%;
 
+    animation-delay: 2s;
+}
+
+.heart-four {
+    bottom: 15%;
     right: 15%;
 
-    bottom: 16%;
-
     animation-delay: 3s;
-}
-
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes photoAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform: scale(1.03);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: scale(1);
-    }
-}
-
-
-@keyframes heartPulse {
-
-    0%,
-    100% {
-
-        transform: scale(1);
-    }
-
-    50% {
-
-        transform: scale(1.15);
-    }
 }
 
 
@@ -630,143 +117,820 @@
 
     0%,
     100% {
-
         transform: translateY(0);
-
-        opacity: 0.3;
     }
 
     50% {
-
-        transform: translateY(-15px);
-
-        opacity: 0.7;
+        transform: translateY(-12px);
     }
 }
 
 
-/* =========================
-   TABLET
-========================= */
+/* =========================================================
+   MAIN GLASS CARD
+========================================================= */
 
-@media (max-width: 768px) {
+.memories-container {
 
-    .memories-page {
+    width: min(1100px, 94vw);
 
-        padding: 12px;
+    min-height: 700px;
+
+    padding: 35px 45px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    text-align: center;
+
+    position: relative;
+
+    animation: fadeUp 0.8s ease;
+}
+
+
+.memories-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5aa9ff,
+            #8e7dff
+        );
+
+    filter: blur(40px);
+
+    opacity: 0.12;
+
+    z-index: -1;
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
     }
 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.memories-header {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+.memories-header h1 {
+
+    font-size: 2.8rem;
+
+    font-weight: 700;
+
+    color: #c8e0ff;
+
+    line-height: 1.2;
+}
+
+
+.memories-header span {
+
+    font-size: 2rem;
+
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   PHOTO + ARROWS
+========================================================= */
+
+.memory-photo-wrapper {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   IMAGE FRAME - 16:9
+========================================================= */
+
+.memory-photo-container {
+
+    /* width: min(650px, 65vw); */
+
+    aspect-ratio: 16 / 9;
+
+    padding: 10px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.memory-photo {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 17px;
+
+    display: block;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.3s ease;
+}
+
+
+.memory-photo:hover {
+
+    transform: scale(1.015);
+}
+
+
+/* =========================================================
+   NAVIGATION ARROWS
+========================================================= */
+
+.arrow {
+
+    width: 62px;
+    height: 62px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 3rem;
+
+    line-height: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.arrow:hover {
+
+    background: rgba(255, 255, 255, 0.25);
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 8px 25px rgba(80, 150, 255, 0.25);
+}
+
+
+.arrow:active {
+
+    transform: scale(0.95);
+}
+
+
+/* =========================================================
+   MEMORY INFORMATION
+========================================================= */
+
+.memory-info {
+
+    margin-top: 10px;
+}
+
+
+.memory-number {
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    color: #82baff;
+
+    letter-spacing: 2px;
+}
+
+
+.memory-number span {
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+.memory-info h2 {
+
+    margin-top: 6px;
+
+    font-size: 1.7rem;
+
+    font-weight: 600;
+
+    color: #ff9bc5;
+}
+
+
+.memory-info p {
+
+    margin-top: 4px;
+
+    color: #d8e5ff;
+
+    font-size: 1rem;
+
+    font-weight: 300;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.memory-dots {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+
+.dot {
+
+    width: 10px;
+    height: 10px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.3);
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.dot:hover {
+
+    background: rgba(255, 255, 255, 0.6);
+}
+
+
+.dot.active {
+
+    width: 28px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #62b0ff,
+            #ff91bd
+        );
+}
+
+
+/* =========================================================
+   LAST MEMORY SECTION
+========================================================= */
+
+.last-memory-section {
+
+    margin-top: 15px;
+
+    animation: fadeUp 0.5s ease;
+}
+
+
+.last-memory-line {
+
+    width: 80px;
+
+    height: 2px;
+
+    margin: 0 auto 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff9ac3,
+            transparent
+        );
+}
+
+
+.last-memory-text {
+
+    color: #d9e5ff;
+
+    font-size: 1rem;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   LETTER BUTTON
+========================================================= */
+
+.letter-button {
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5ca9ff,
+            #7d73ff
+        );
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(70, 130, 255, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+
+.letter-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(70, 130, 255, 0.4);
+}
+
+
+.letter-button:active {
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
 
     .memories-container {
 
-        width: 96vw;
+        width: 94vw;
 
-        height: 96vh;
+        padding: 30px 25px;
 
-        padding: 20px 15px;
-
-        border-radius: 25px;
-    }
-
-
-    .memories-header {
-
-        gap: 10px;
-    }
-
-
-    .memories-header > span {
-
-        font-size: 20px;
-    }
-
-
-    .memories-header p {
-
-        font-size: 0.65rem;
-    }
-
-
-    .memories-header h1 {
-
-        font-size: 1.8rem;
-    }
-
-
-    .memory-photo-wrapper {
-
-        gap: 8px;
+        min-height: auto;
     }
 
 
     .memory-photo-container {
 
-        width: 72vw;
+        width: min(600px, 65vw);
 
-        height: 52vh;
+        aspect-ratio: 16 / 9;
+    }
 
-        max-height: 470px;
+
+    .memory-photo-wrapper {
+
+        gap: 18px;
     }
 
 
     .arrow {
 
-        width: 40px;
+        width: 52px;
+        height: 52px;
 
-        height: 40px;
-
-        font-size: 30px;
-    }
-
-
-    .memory-info h2 {
-
-        font-size: 1.15rem;
-    }
-
-
-    .memory-info p {
-
-        font-size: 0.75rem;
-
-        max-width: 90%;
+        font-size: 2.5rem;
     }
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .memories-page {
 
-        padding: 8px;
+        min-height: 100vh;
+
+        padding: 15px 10px;
+
+        align-items: center;
+
+        overflow-y: auto;
     }
 
 
     .memories-container {
 
-        width: 96vw;
+        width: 100%;
 
-        height: 96vh;
+        min-height: auto;
 
-        padding: 18px 12px;
+        padding: 25px 12px;
 
-        border-radius: 22px;
+        border-radius: 24px;
     }
 
 
-    .memories-header > span {
+    /* Header */
 
-        font-size: 16px;
+    .memories-header {
+
+        gap: 10px;
+
+        margin-bottom: 18px;
     }
 
 
-    .memories-header p {
+    .memories-header h1 {
 
-        font-size: 0.58rem;
+        font-size: 2rem;
+    }
+
+
+    .memories-header span {
+
+        font-size: 1.4rem;
+    }
+
+
+    /* Image section */
+
+    .memory-photo-wrapper {
+
+        gap: 8px;
+
+        width: 100%;
+    }
+
+
+    /*
+       16:9 image on mobile
+    */
+
+    .memory-photo-container {
+
+        /* width: calc(100% - 80px); */
+
+        aspect-ratio: 16 / 9;
+
+        height: auto;
+
+        padding: 6px;
+
+        border-radius: 18px;
+    }
+
+
+    .memory-photo {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+
+        border-radius: 12px;
+    }
+
+
+    /* Arrows */
+
+    .arrow {
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 2rem;
+    }
+
+
+    /* Information */
+
+    .memory-info {
+
+        margin-top: 10px;
+    }
+
+
+    .memory-number {
+
+        font-size: 0.85rem;
+    }
+
+
+    .memory-info h2 {
+
+        font-size: 1.35rem;
+
+        margin-top: 5px;
+    }
+
+
+    .memory-info p {
+
+        font-size: 0.9rem;
+
+        line-height: 1.5;
+
+        padding: 0 8px;
+    }
+
+
+    /* Dots */
+
+    .memory-dots {
+
+        margin-top: 12px;
+
+        gap: 7px;
+    }
+
+
+    .dot {
+
+        width: 9px;
+        height: 9px;
+    }
+
+
+    .dot.active {
+
+        width: 24px;
+    }
+
+
+    /* Last section */
+
+    .last-memory-section {
+
+        margin-top: 15px;
+    }
+
+
+    .last-memory-text {
+
+        font-size: 0.9rem;
+    }
+
+
+    .letter-button {
+
+        padding: 12px 20px;
+
+        font-size: 0.85rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .memories-page {
+
+        padding: 10px 7px;
+    }
+
+
+    .memories-container {
+
+        padding: 20px 9px;
+
+        border-radius: 20px;
+    }
+
+
+    /* Header */
+
+    .memories-header {
+
+        gap: 7px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .memories-header h1 {
+
+        font-size: 1.65rem;
+    }
+
+
+    .memories-header span {
+
+        font-size: 1.2rem;
+    }
+
+
+    /* 16:9 image */
+
+    .memory-photo-container {
+
+        width: calc(100% - 65px);
+
+        aspect-ratio: 16 / 9;
+
+        height: auto;
+
+        padding: 5px;
+
+        border-radius: 16px;
+    }
+
+
+    .memory-photo {
+
+        border-radius: 11px;
+
+        object-fit: contain;
+    }
+
+
+    /* Arrows */
+
+    .arrow {
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 1.7rem;
+    }
+
+
+    /* Info */
+
+    .memory-info h2 {
+
+        font-size: 1.2rem;
+    }
+
+
+    .memory-info p {
+
+        font-size: 0.82rem;
+
+        line-height: 1.4;
+    }
+
+
+    /* Dots */
+
+    .memory-dots {
+
+        gap: 6px;
+    }
+
+
+    .dot {
+
+        width: 8px;
+        height: 8px;
+    }
+
+
+    .dot.active {
+
+        width: 21px;
+    }
+
+
+    /* Letter */
+
+    .letter-button {
+
+        padding: 11px 18px;
+
+        font-size: 0.82rem;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .memories-container {
+
+        padding: 18px 7px;
     }
 
 
@@ -776,109 +940,45 @@
     }
 
 
-    .memory-photo-wrapper {
-
-        gap: 5px;
-    }
-
-
-    .memory-photo-container {
-
-        width: 76vw;
-
-        height: 50vh;
-
-        max-height: 420px;
-
-        padding: 5px;
-    }
-
-
-    .memory-photo {
-
-        border-radius: 12px;
-    }
-
-
-    .arrow {
-
-        width: 34px;
-
-        height: 34px;
-
-        font-size: 25px;
-    }
-
-
-    .memory-number {
-
-        font-size: 0.7rem;
-    }
-
-
-    .memory-info h2 {
+    .memories-header span {
 
         font-size: 1rem;
     }
 
 
-    .memory-info p {
-
-        font-size: 0.68rem;
-
-        line-height: 1.4;
-    }
-
-
-    .memory-footer {
-
-        font-size: 0.6rem;
-    }
-
-
-    .memory-heart {
-
-        display: none;
-    }
-}
-
-
-/* =========================
-   VERY SMALL PHONES
-========================= */
-
-@media (max-width: 360px) {
-
-    .memories-container {
-
-        padding: 14px 10px;
-    }
-
-
-    .memories-header h1 {
-
-        font-size: 1.25rem;
-    }
-
-
     .memory-photo-container {
 
-        height: 47vh;
+        width: calc(100% - 58px);
+
+        aspect-ratio: 16 / 9;
+
+        padding: 4px;
     }
 
 
     .arrow {
 
-        width: 30px;
+        width: 32px;
+        height: 32px;
 
-        height: 30px;
+        font-size: 1.5rem;
+    }
 
-        font-size: 22px;
+
+    .memory-info h2 {
+
+        font-size: 1.1rem;
     }
 
 
     .memory-info p {
 
-        font-size: 0.62rem;
+        font-size: 0.78rem;
+    }
+
+
+    .memory-number {
+
+        font-size: 0.75rem;
     }
 }
