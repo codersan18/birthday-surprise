@@ -1,0 +1,884 @@
+/* =========================
+   MAIN PAGE
+========================= */
+
+.memories-page {
+
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(90, 169, 255, 0.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 100, 160, 0.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #061126,
+            #102b58,
+            #243f83
+        );
+
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.memories-container {
+
+    width: min(850px, 94vw);
+
+    height: 94vh;
+
+    padding: 25px 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.last-memory-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 25px;
+
+    animation: lastMemoryAppear 1.5s ease forwards;
+}
+
+.last-memory-line {
+    width: 80px;
+    height: 1px;
+
+    margin-bottom: 12px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 170, 205, 0.8),
+        transparent
+    );
+}
+
+.last-memory-text {
+    margin: 0 0 15px;
+
+    color: #dbe7fa;
+
+    font-size: 0.85rem;
+
+    font-weight: 300;
+
+    letter-spacing: 0.5px;
+
+    opacity: 0;
+
+    animation: textReveal 1s ease 0.7s forwards;
+}
+
+.letter-button {
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 14px;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #5aa9ff,
+        #7775ff
+    );
+
+    box-shadow:
+        0 8px 25px rgba(90, 130, 255, 0.3);
+
+    opacity: 0;
+
+    animation:
+        buttonReveal 1s ease 1.2s forwards,
+        buttonFloat 3s ease-in-out 2.2s infinite;
+
+    transition: 0.3s;
+}
+
+.letter-button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(90, 130, 255, 0.45);
+}
+
+
+@keyframes lastMemoryAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes textReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes buttonReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@keyframes buttonFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.memories-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    width: 100%;
+}
+
+.memories-header > span {
+
+    font-size: 28px;
+
+    animation: heartPulse 2s infinite;
+}
+
+.memories-header p {
+
+    margin: 0 0 3px;
+
+    color: #b9ccef;
+
+    font-size: 0.8rem;
+
+    font-weight: 300;
+}
+
+.memories-header h1 {
+
+    margin: 0;
+
+    font-size: 2.2rem;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #a9d5ff,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================
+   PHOTO AREA
+========================= */
+
+.memory-photo-wrapper {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   PHOTO CONTAINER
+========================= */
+
+.memory-photo-container {
+
+    width: min(500px, 65vw);
+
+    height: 52vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 8px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.25),
+            rgba(255,255,255,0.05)
+        );
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.35);
+
+    overflow: hidden;
+}
+
+
+.memory-photo {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+
+    animation: photoAppear 0.5s ease;
+}
+
+
+/* =========================
+   ARROWS
+========================= */
+
+.arrow {
+
+    width: 50px;
+
+    height: 50px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    color: white;
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    backdrop-filter: blur(10px);
+}
+
+.arrow:hover {
+
+    background: rgba(255,255,255,0.22);
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 10px 30px rgba(90,169,255,0.25);
+}
+
+
+/* =========================
+   MEMORY INFO
+========================= */
+
+.memory-info {
+
+    width: 100%;
+
+    max-width: 650px;
+}
+
+
+.memory-number {
+
+    color: #8fc5ff;
+
+    font-size: 0.85rem;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+}
+
+.memory-number span {
+
+    color: #7387ae;
+
+}
+
+
+.memory-info h2 {
+
+    margin: 0;
+
+    color: #ff9fc4;
+
+    font-size: 1.4rem;
+
+    font-weight: 500;
+}
+
+
+.memory-info p {
+
+    margin: 7px auto 0;
+
+    max-width: 580px;
+
+    color: #d6e2f8;
+
+    font-size: 0.85rem;
+
+    font-weight: 300;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   DOTS
+========================= */
+
+.memory-dots {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+.dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.25);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.dot.active {
+
+    width: 25px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5aa9ff,
+            #ff8fb8
+        );
+}
+
+
+.dot:hover {
+
+    background: rgba(255,255,255,0.6);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.memory-footer {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: #9eb3d8;
+
+    font-size: 0.7rem;
+
+    font-weight: 300;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.memory-heart {
+
+    position: absolute;
+
+    color: rgba(255, 126, 182, 0.35);
+
+    font-size: 22px;
+
+    pointer-events: none;
+
+    animation: floatingHeart 6s ease-in-out infinite;
+}
+
+.heart-one {
+
+    left: 8%;
+
+    top: 18%;
+}
+
+.heart-two {
+
+    left: 15%;
+
+    bottom: 15%;
+
+    animation-delay: 2s;
+}
+
+.heart-three {
+
+    right: 8%;
+
+    top: 20%;
+
+    animation-delay: 1s;
+}
+
+.heart-four {
+
+    right: 15%;
+
+    bottom: 16%;
+
+    animation-delay: 3s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes photoAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(1.03);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+    }
+
+    50% {
+
+        transform: scale(1.15);
+    }
+}
+
+
+@keyframes floatingHeart {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+        opacity: 0.3;
+    }
+
+    50% {
+
+        transform: translateY(-15px);
+
+        opacity: 0.7;
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .memories-page {
+
+        padding: 12px;
+    }
+
+
+    .memories-container {
+
+        width: 96vw;
+
+        height: 96vh;
+
+        padding: 20px 15px;
+
+        border-radius: 25px;
+    }
+
+
+    .memories-header {
+
+        gap: 10px;
+    }
+
+
+    .memories-header > span {
+
+        font-size: 20px;
+    }
+
+
+    .memories-header p {
+
+        font-size: 0.65rem;
+    }
+
+
+    .memories-header h1 {
+
+        font-size: 1.8rem;
+    }
+
+
+    .memory-photo-wrapper {
+
+        gap: 8px;
+    }
+
+
+    .memory-photo-container {
+
+        width: 72vw;
+
+        height: 52vh;
+
+        max-height: 470px;
+    }
+
+
+    .arrow {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 30px;
+    }
+
+
+    .memory-info h2 {
+
+        font-size: 1.15rem;
+    }
+
+
+    .memory-info p {
+
+        font-size: 0.75rem;
+
+        max-width: 90%;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .memories-page {
+
+        padding: 8px;
+    }
+
+
+    .memories-container {
+
+        width: 96vw;
+
+        height: 96vh;
+
+        padding: 18px 12px;
+
+        border-radius: 22px;
+    }
+
+
+    .memories-header > span {
+
+        font-size: 16px;
+    }
+
+
+    .memories-header p {
+
+        font-size: 0.58rem;
+    }
+
+
+    .memories-header h1 {
+
+        font-size: 1.45rem;
+    }
+
+
+    .memory-photo-wrapper {
+
+        gap: 5px;
+    }
+
+
+    .memory-photo-container {
+
+        width: 76vw;
+
+        height: 50vh;
+
+        max-height: 420px;
+
+        padding: 5px;
+    }
+
+
+    .memory-photo {
+
+        border-radius: 12px;
+    }
+
+
+    .arrow {
+
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 25px;
+    }
+
+
+    .memory-number {
+
+        font-size: 0.7rem;
+    }
+
+
+    .memory-info h2 {
+
+        font-size: 1rem;
+    }
+
+
+    .memory-info p {
+
+        font-size: 0.68rem;
+
+        line-height: 1.4;
+    }
+
+
+    .memory-footer {
+
+        font-size: 0.6rem;
+    }
+
+
+    .memory-heart {
+
+        display: none;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 360px) {
+
+    .memories-container {
+
+        padding: 14px 10px;
+    }
+
+
+    .memories-header h1 {
+
+        font-size: 1.25rem;
+    }
+
+
+    .memory-photo-container {
+
+        height: 47vh;
+    }
+
+
+    .arrow {
+
+        width: 30px;
+
+        height: 30px;
+
+        font-size: 22px;
+    }
+
+
+    .memory-info p {
+
+        font-size: 0.62rem;
+    }
+}

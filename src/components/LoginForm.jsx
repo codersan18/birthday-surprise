@@ -27,7 +27,7 @@ export default function LoginForm() {
         localStorage.setItem("username", user.username);
         navigate("/home");
     } else {
-        setError("Wrong nickname or password ❤️");
+        setError("Wrong nickname or password 💔");
     }
 };
 
@@ -63,7 +63,7 @@ export default function LoginForm() {
                     ?
                     "Checking..."
                     :
-                    "Unlock ❤️"
+                    "Unlock the Surprise"
                 }
 
             </button>

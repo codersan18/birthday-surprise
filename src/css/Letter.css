@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+.letter-page {
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(90, 169, 255, 0.22),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            rgba(255, 105, 160, 0.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #071329,
+            #172f5c,
+            #304d91
+        );
+
+    font-family: 'Poppins', sans-serif;
+
+    color: white;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.letter-card {
+
+    width: min(720px, 94vw);
+
+    min-height: 650px;
+
+    max-height: 92vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================
+   CLOSED LETTER
+========================= */
+
+.envelope-section {
+
+    text-align: center;
+
+    animation: fadeIn 0.7s ease;
+}
+
+
+.letter-icon {
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+
+.small-text {
+
+    color: #a9c9f5;
+
+    font-size: 0.9rem;
+
+    margin-bottom: 5px;
+}
+
+
+.envelope-section h1 {
+
+    margin: 0;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 3rem;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #b8d8ff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.intro-text {
+
+    color: #d4e0f5;
+
+    font-size: 0.95rem;
+
+    margin: 15px 0 35px;
+
+    font-weight: 300;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.open-letter-btn,
+.back-memories-btn {
+
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 14px;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5aa9ff,
+            #7775ff
+        );
+
+    box-shadow:
+        0 10px 30px rgba(90, 130, 255, 0.25);
+
+    transition: 0.3s;
+}
+
+
+.open-letter-btn:hover,
+.back-memories-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(90, 130, 255, 0.4);
+}
+
+
+/* =========================
+   LETTER CONTENT
+========================= */
+
+.letter-content {
+
+    width: 100%;
+
+    max-height: 82vh;
+
+    text-align: left;
+
+    animation: letterOpen 0.8s ease;
+}
+
+
+.letter-top {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    margin-bottom: 5px;
+}
+
+
+.letter-date {
+
+    text-align: center;
+
+    color: #8fb8eb;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.letter-content h1 {
+
+    text-align: center;
+
+    margin: 0 0 30px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 2.5rem;
+
+    font-weight: 500;
+
+    color: #ffb1ce;
+}
+
+
+/* =========================
+   LETTER BODY
+========================= */
+
+.letter-body {
+
+    max-width: 580px;
+
+    margin: auto;
+
+    color: #dce7f8;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+
+.letter-body p {
+
+    margin: 0 0 15px;
+}
+
+
+.final-line {
+
+    color: #ffabc9;
+
+    font-weight: 500;
+
+    margin-top: 25px !important;
+}
+
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.signature {
+
+    max-width: 580px;
+
+    margin: 25px auto 0;
+
+    text-align: right;
+
+    font-family: 'Playfair Display', serif;
+
+    color: #cbd9ef;
+}
+
+
+.signature p {
+
+    margin: 0;
+
+    font-size: 0.85rem;
+}
+
+
+.signature h2 {
+
+    margin: 3px 0 0;
+
+    color: #ffabc9;
+
+    font-size: 1.25rem;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.back-memories-btn {
+    
+    display: block;
+
+    margin: 25px auto 0;
+
+    padding: 10px 20px;
+
+    font-size: 0.75rem;
+
+    background: rgba(255,255,255,0.1);
+
+    box-shadow: none;
+
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes letterOpen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .letter-page {
+
+        padding: 10px;
+    }
+
+
+    .letter-card {
+
+        width: 96vw;
+
+        min-height: 0;
+
+        height: 94vh;
+
+        padding: 30px 22px;
+
+        border-radius: 24px;
+    }
+
+
+    .letter-icon {
+
+        font-size: 65px;
+    }
+
+
+    .envelope-section h1 {
+
+        font-size: 2.2rem;
+    }
+
+
+    .intro-text {
+
+        font-size: 0.8rem;
+
+        margin-bottom: 28px;
+    }
+
+
+    .letter-content {
+
+        max-height: 88vh;
+
+        overflow-y: auto;
+
+        scrollbar-width: none;
+    }
+
+
+    .letter-content::-webkit-scrollbar {
+
+        display: none;
+    }
+
+
+    .letter-content h1 {
+
+        font-size: 2rem;
+
+        margin-bottom: 20px;
+    }
+
+
+    .letter-body {
+
+        font-size: 0.85rem;
+
+        line-height: 1.6;
+    }
+
+
+    .letter-body p {
+
+        margin-bottom: 12px;
+    }
+
+
+    .signature {
+
+        margin-top: 20px;
+    }
+}

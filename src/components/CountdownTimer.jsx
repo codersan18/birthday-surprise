@@ -5,7 +5,8 @@ export default function CountdownTimer() {
 
     const navigate = useNavigate();
 
-    const birthday = new Date("2026-11-01T00:00:00");
+    // const birthday = new Date("2026-11-01T00:00:00");
+    const birthday = new Date("2026-08-15T00:00:00");
 
     const getTimeRemaining = () => {
 

@@ -1,14 +1,84 @@
-export default function Home(){
-    return(
-        <h1
-            style={{
-                color:"white",
-                textAlign:"center",
-                marginTop:"200px"
-            }}
-        >
-            Welcome My Love ❤️
-        </h1>
+import { useNavigate } from "react-router-dom";
+import "../css/Home.css";
 
-    )
+export default function Home() {
+    const navigate = useNavigate();
+
+    return (
+        <div className="birthday-page">
+
+             {/* Letter */}
+
+            {/* Floating hearts */}
+            <div className="heart heart-1">🩵</div>
+            <div className="heart heart-2">🩵</div>
+            <div className="heart heart-3">🩵</div>
+            <div className="heart heart-4">🩵</div>
+            <div className="heart heart-5">🩵</div>
+            <div className="heart heart-6">🩵</div>
+
+            <div className="birthday-card">
+
+                 <div className="birthday-letter">
+                    <button
+                        className="birthday-letter-icon"
+                        onClick={() => navigate("/letter")}
+                        aria-label="Open your letter"
+                    >
+                        💌
+                    </button>
+
+                    <span className="letter-sparkle sparkle-one">✦</span>
+                    <span className="letter-sparkle sparkle-two">✦</span>
+                </div>
+
+                <div className="cake">
+                   🎂
+                </div>
+
+                {/* <p className="small-text">
+                    Today is a very special day...
+                </p> */}
+
+                <h1>
+                    Happy Birthday
+                </h1>
+
+                <h2>
+                   🩵 Idiot 🩵
+                </h2>
+
+                <div className="divider">
+                    ✨✨✨✨
+                </div>
+
+                <p className="birthday-message">
+                   Happy Birthday to the most special person
+                    in my life.
+                </p>
+
+                <p className="birthday-message">
+                    I hope your day is filled with happiness,
+                    beautiful moments, and lots of smiles.
+                </p>
+
+                <p className="birthday-message">
+                    You deserve all the happiness in the world. 
+                </p>
+
+                <button
+                    className="memory-button"
+                    onClick={() => navigate("/memories")}
+                >
+                    Visit Gallery 📸
+                </button>
+                
+                <p className="signature">
+                    Made with 🩵 by San
+                </p>
+
+            </div>
+
+        </div>
+    );
 }

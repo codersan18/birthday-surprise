@@ -11,7 +11,7 @@ export default function Login() {
                     💙
                 </div>
 
-                <h1>Welcome ❤️</h1>
+                <h1>Welcome Idiot</h1>
 
                 <p>
                     This little surprise has been waiting
@@ -21,7 +21,7 @@ export default function Login() {
                 <LoginForm />
 
                 <span className="made">
-                    Made with ❤️ by Santhosh
+                    Made with 🩵 by Santhosh
                 </span>
 
             </div>
