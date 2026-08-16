@@ -1,15 +1,39 @@
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Home.css";
 
+import birthdayMusic from "../assets/music/happybirthdaytheme.mp3";
+
 export default function Home() {
     const navigate = useNavigate();
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+        const audio = audioRef.current;
+
+        if (audio) {
+            audio.volume = 0.5;
+
+            audio.play().catch(() => {
+                console.log("Browser blocked autoplay.");
+            });
+        }
+    }, []);
 
     return (
         <div className="birthday-page">
 
-             {/* Letter */}
+            {/* Background Music */}
+
+            <audio
+                ref={audioRef}
+                src={birthdayMusic}
+                loop
+                preload="auto"
+            />
 
             {/* Floating hearts */}
+
             <div className="heart heart-1">🩵</div>
             <div className="heart heart-2">🩵</div>
             <div className="heart heart-3">🩵</div>
@@ -19,7 +43,9 @@ export default function Home() {
 
             <div className="birthday-card">
 
-                 <div className="birthday-letter">
+                {/* Letter */}
+
+                <div className="birthday-letter">
                     <button
                         className="birthday-letter-icon"
                         onClick={() => navigate("/letter")}
@@ -28,24 +54,25 @@ export default function Home() {
                         💌
                     </button>
 
-                    <span className="letter-sparkle sparkle-one">✦</span>
-                    <span className="letter-sparkle sparkle-two">✦</span>
+                    <span className="letter-sparkle sparkle-one">
+                        ✦
+                    </span>
+
+                    <span className="letter-sparkle sparkle-two">
+                        ✦
+                    </span>
                 </div>
 
                 <div className="cake">
-                   🎂
+                    🎂
                 </div>
-
-                {/* <p className="small-text">
-                    Today is a very special day...
-                </p> */}
 
                 <h1>
                     Happy Birthday
                 </h1>
 
                 <h2>
-                   🩵 Idiot 🩵
+                    🩵 Idiot 🩵
                 </h2>
 
                 <div className="divider">
@@ -53,7 +80,7 @@ export default function Home() {
                 </div>
 
                 <p className="birthday-message">
-                   Happy Birthday to the most special person
+                    Happy Birthday to the most special person
                     in my life.
                 </p>
 
@@ -63,7 +90,7 @@ export default function Home() {
                 </p>
 
                 <p className="birthday-message">
-                    You deserve all the happiness in the world. 
+                    You deserve all the happiness in the world.
                 </p>
 
                 <button
@@ -72,13 +99,12 @@ export default function Home() {
                 >
                     Visit Gallery 📸
                 </button>
-                
+
                 <p className="signature">
                     Made with 🩵 by San
                 </p>
 
             </div>
-
         </div>
     );
 }

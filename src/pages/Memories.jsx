@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect,useRef} from "react";
 import "../css/Memories.css";
 import { useNavigate } from "react-router-dom";
 
@@ -10,6 +10,7 @@ import memory5 from "../assets/memories/glibliimage5.png";
 import memory6 from "../assets/memories/glibliimage6.png";
 import memory7 from "../assets/memories/glibliimage7.png";
 
+import rosetheme from "../assets/music/therose.mp3";
 
 const memories = [
     {
@@ -53,6 +54,19 @@ const memories = [
 function Memories() {
 
     const navigate = useNavigate();
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+        const audio = audioRef.current;
+
+        if (audio) {
+            audio.volume = 0.5;
+
+            audio.play().catch(() => {
+                console.log("Browser blocked autoplay.");
+            });
+        }
+    }, []);
 
     const [current, setCurrent] = useState(0);
 
@@ -95,6 +109,16 @@ function Memories() {
     return (
 
         <div className="memories-page">
+
+             {/* Background Music */}
+            
+                        <audio
+                            ref={audioRef}
+                            src={rosetheme}
+                            loop
+                            preload="auto"
+                        />
+            
 
 
             {/* =========================
