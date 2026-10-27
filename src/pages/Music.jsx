@@ -105,6 +105,10 @@ export default function Music() {
                         onChange={handleVolumeChange}
                     />
                 </div>
+
+                <br />
+
+                 <h6 className="song-subtitle">Note : Wear headphones for the best experience!</h6>
             </div>
         </div>
     );
