@@ -24,7 +24,6 @@ export default function Home() {
         <div className="birthday-page">
 
             {/* Background Music */}
-
             <audio
                 ref={audioRef}
                 src={birthdayMusic}
@@ -33,7 +32,6 @@ export default function Home() {
             />
 
             {/* Floating hearts */}
-
             <div className="heart heart-1">🩵</div>
             <div className="heart heart-2">🩵</div>
             <div className="heart heart-3">🩵</div>
@@ -43,9 +41,8 @@ export default function Home() {
 
             <div className="birthday-card">
 
-                {/* Letter */}
-
-                <div className="birthday-letter">
+                {/* Top Actions (Letter & Music) */}
+                <div className="top-actions">
                     <button
                         className="birthday-letter-icon"
                         onClick={() => navigate("/letter")}
@@ -61,6 +58,15 @@ export default function Home() {
                     <span className="letter-sparkle sparkle-two">
                         ✦
                     </span>
+
+                    <button
+                        className="birthday-music-icon"
+                        onClick={() => navigate("/music")}
+                        aria-label="Play your song"
+                        title="A song for you"
+                    >
+                        🎵
+                    </button>
                 </div>
 
                 <div className="cake">
