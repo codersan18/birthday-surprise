@@ -54,7 +54,7 @@ export default function Music() {
             <div className="music-card">
                 <button 
                     className="back-button"
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/home")}
                 >
                     ← Back
                 </button>
