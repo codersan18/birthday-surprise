@@ -92,7 +92,7 @@ export default function Home() {
 
                 <p className="birthday-message">
                     I hope your day is filled with happiness,
-                    beautiful moments, and lots of smiles.
+                    beautiful moments and lots of smiles.
                 </p>
 
                 <p className="birthday-message">
